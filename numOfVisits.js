@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     if (req.cookies.visits) {
         let visits = parseInt(req.cookies.visits);
         res.cookie('visits', visits + 1);
-        res.send(`Hello, this is the ${visits + 1} time that you are visiting my webpage. Last time you visited my webpage on: ${formatESTDate()}`);
+        res.send(`Hello, this is the ${visits + 1} time that you are visiting my webpage.<br><b>Last time you visited my webpage on: ${formatESTDate()}<br>`);
     } else {
         res.cookie('visits', 1 );
         res.send("Welcome to my webpage! It is your first time that you are here.");
